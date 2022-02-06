@@ -122,15 +122,6 @@ form {
     margin-top: 0em;
 }
 
-input[type="hidden" i] {
-    appearance: none;
-    background-color: initial;
-    cursor: default;
-    display: none !important;
-    padding: initial;
-    border: initial;
-}
-
 input {
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;
@@ -149,8 +140,26 @@ input {
     background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
     margin: 0em;
     padding: 1px 2px;
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 3px;
+}
+
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    color: -internal-light-dark(black, white);
+    padding: 1px 6px;
+    border-width: 1px;
+    border-style: outset;
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
 }
@@ -198,4 +207,5 @@ textarea {
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
     padding: 2px;
+    border-radius: 3px;
 }

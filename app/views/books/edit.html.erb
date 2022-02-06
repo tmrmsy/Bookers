@@ -8,17 +8,22 @@
 
     <h1>Editing Book</h1>
 
-    <%= form_with model: @book, url: update_book_path(@book.id), method: :patch, local:true do |f| %>
-  
-      <h4>Title</h4>
-      <%= f.text_field :title %>
-  
-      <h4>Body</h4>
-      <%= f.text_area :body %>
-  
-      <p><%= f.submit 'Update Book' %></p>
-  
-    <% end %>
+    <form class="edit_book" id="edit_book_50459" action="/books/50459" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="gQ3EUA+57U194NGDgIDMUENF292anfO82bchpt96/LvvWXArMm6yINgjnwm6IraWZGKxSOJjGi/jdUW7qaYFyg==">
+
+      <div class="field">
+        <label for="book_title">Title</label>
+        <input class="book_title" type="text" value="トラブル知らずのシステム設計" name="book[title]" id="book_title">
+      </div>
+
+      <div class="field">
+        <label for="book_body">Body</label>
+        <textarea class="book_body" name="book[body]" id="book_body">システム設計の要点を図解で説明してくれます</textarea>
+      </div>
+
+      <div class="actions">
+        <input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">
+      </div>
+    </form>
 
     <a class="back" href="/books">Back</a>
   </body>
