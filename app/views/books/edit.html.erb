@@ -8,31 +8,30 @@
 
     <h1>Editing Book</h1>
     
-        <% if @book.errors.any? %>
+    <% if @book.errors.any? %>
+    <div class="error_massage">
       <%= @book.errors.count %> errors prohibited this book from being saved:
-      <ul>
-        <% @book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      </div>
+
+    <%= form_with model: @book, local:true do |f| %>
+    <div class="field">
+      <label>Title</label>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <label>Body</label>
+      <%= f.text_area :body %>
+    </div>
+    <div class="action">
+      <div><%= f.submit 'Update Book' %></div>
+    </div>
     <% end %>
-
-    <form class="edit_book" id="edit_book_50459" action="/books/50459" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="gQ3EUA+57U194NGDgIDMUENF292anfO82bchpt96/LvvWXArMm6yINgjnwm6IraWZGKxSOJjGi/jdUW7qaYFyg==">
-
-      <div class="field">
-        <label for="book_title">Title</label>
-        <input class="book_title" type="text" value="トラブル知らずのシステム設計" name="book[title]" id="book_title">
-      </div>
-
-      <div class="field">
-        <label for="book_body">Body</label>
-        <textarea class="book_body" name="book[body]" id="book_body">システム設計の要点を図解で説明してくれます</textarea>
-      </div>
-
-      <div class="actions">
-        <input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">
-      </div>
-    </form>
 
     <%= link_to "Show", book_path(@book.id) %> | 
     <%= link_to "Back", '/books' %>

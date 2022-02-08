@@ -209,3 +209,12 @@ textarea {
     padding: 2px;
     border-radius: 3px;
 }
+
+.flash {
+    color: green;
+    margin: 33px;
+}
+
+.error_massage {
+    color: red;
+}
