@@ -27,7 +27,17 @@
     </table>
 
     <h2>New Book</h2>
-    <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="xqoSml/3c6p47Cia7pWj00tW2eoaK4pzt5YGf580UUaNMp2woJkszqfCHyCwaBWmJJ1uAVu/ocbgJfXyfA4cdg==">
+    
+    <% if @book.errors.any? %>
+      <%= @book.errors.count %> errors prohibited this book from being saved:
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    
+      <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="xqoSml/3c6p47Cia7pWj00tW2eoaK4pzt5YGf580UUaNMp2woJkszqfCHyCwaBWmJJ1uAVu/ocbgJfXyfA4cdg==">
 
       <div class="field">
         <label for="book_title">Title</label>
@@ -43,5 +53,6 @@
         <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
       </div>
     </form>
+    
   </body>
 </html>
